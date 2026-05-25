@@ -1,0 +1,13 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger main workflow
+        run: |
+          echo "触发主工作流"
+          gh workflow run crawler.yml -R CopawAI/TrendRadar
